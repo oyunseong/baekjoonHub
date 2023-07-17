@@ -1,10 +1,9 @@
+
 import kotlin.math.min
 
 fun main() {
-    val br = System.`in`.bufferedReader()
-    val input = br.readLine().toInt()
-    val dp = Array(input + 1) { 0 }
-
+    val input = System.`in`.bufferedReader().readLine().toInt()
+    val dp = IntArray(input + 1)
     for (i in 2..input) {
         dp[i] = dp[i - 1] + 1
         if (i % 2 == 0) dp[i] = min(dp[i], dp[i / 2] + 1)
